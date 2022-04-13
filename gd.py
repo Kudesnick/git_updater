@@ -124,7 +124,7 @@ class RepoGL(Repo):
         super().__init__(args)
     
     def repo_iterator(self):
-        for repo in self.__cloud.projects.list():
+        for repo in self.__cloud.projects.list(all = True):
             self.item_proc(f"{args.server_url}/{repo.namespace['path']}",
                 repo.namespace['path'],
                 repo.path,
